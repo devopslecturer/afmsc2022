@@ -24,10 +24,10 @@ This is the online repository for the <<Team Name>>. Summary of project requirem
 Our product will be delivered using an Agile methodology that embraces the DevOps culture. Please note that our culture embraces change and these documents are treated as living, breathing artefacts that will be continuously updated.
 
 ### Scrum Master
-<>
+Ron Greego Raju
 
 ### Product Owner
-<>
+Rohit Mishra
 
 ### Team Members
  * Aishwaryalakshmi Arumugam
@@ -119,8 +119,8 @@ These are the current Risks on the project, re-aligned on a weekly basis
 
 ### Meetings
 
-    Stand-ups will occur on <<Day(s) and time>>.
-    The order that people give their updates will be based on <<define the order>> of those present at the meeting.
+    Stand-ups will occur on Monday, 11:00 to 11:15.
+    The order that people give their updates will be based on Aishwaryalakshmi Arumugam, Aravind Rajesh Kanna, Bubashankushan, Dalimol Abraham, Rohit Mishra, Ron Greego Raju of those present at the meeting.
     Updates will be in the form: What I've done, What I plan to do, Impediments
     Sprint planning will occur every other <<day and time>>.
     Please add and update items within Jira prior to the sprint planning session.
