@@ -41,9 +41,8 @@ Lecturer: Paul Greaney
 
   
 ### Project Deadline
-<<date and time>>
-Refer to Blackboard for the most up to date information on deadlines.
-  
+Friday, 8 April 2022 and 23:59
+
 ## Project Specification  
 <!-- <team must agree specifications here - below are samples for discussion purposes>     -->
     Clean and simple design
@@ -129,7 +128,7 @@ These are the current Risks on the project, re-aligned on a weekly basis
     The order that people present their sprint retro updates will be based on alphabetical order of those present at the meeting.
     Points raised in the sprint retro will be noted and posted on the slack channel by the Scrum Master.
     Backlog refinement?
-    Task estimation will be done using <<what method>>. 
+    Task estimation will be done using Story Points (Fiboinacci/Poker). 
     Come prepared to meetings.
     Be on time for Stand Ups and meetings.
     Mobile phones on silent.
@@ -139,9 +138,9 @@ These are the current Risks on the project, re-aligned on a weekly basis
 
 ### Communication
 
-    << ?>> is the preferred method of communication.
-    If a demonstration is required use << ?>>, record the session and upload to the Slack channel.
-    No Slack communications between "<Time and Timezone>".
+    Slack is the preferred method of communication.
+    If a demonstration is required use Loom, record the session and upload to the Slack channel.
+    No Slack communications between "22:00 to 09:00 GMT".
     Raise a problem as soon as you see it.
     Respect each other and understand differences in knowledge.
     All team documents are to be created using Markdown language and shared on GitHub.
@@ -152,7 +151,13 @@ These are the current Risks on the project, re-aligned on a weekly basis
     Don’t interrupt and cut another person off while they are talking.
     Listen when someone is talking, don’t interject.
     Zero tolerance for bullying.
-    Communication in this order: <<list in order of preference for the team>>
+    Communication in this order: 
+     * Aishwaryalakshmi Arumugam
+     * Aravind Rajesh Kanna
+     * Bubashankushan
+     * Dalimol Abraham
+     * Rohit Mishra
+     * Ron Greego Raju
     Agile way of working.
     If are assigned a job, take ownership of it and keep it up to date.
     Stick to your agreed working patterns. Let the team know when you are late or going early.
@@ -173,6 +178,7 @@ These are the current Risks on the project, re-aligned on a weekly basis
 ### Branching Strategy
  * Main
  * Develop
+ * Feature
 
 ### Estimating Story Points Within Jira
 
