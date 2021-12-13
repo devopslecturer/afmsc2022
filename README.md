@@ -30,9 +30,14 @@ Our product will be delivered using an Agile methodology that embraces the DevOp
 <>
 
 ### Team Members
-<<List each team member on a separate line>>
+ * Aishwaryalakshmi Arumugam
+ * Aravind Rajesh Kanna
+ * Bubashankushan
+ * Dalimol Abraham
+ * Rohit Mishra
+ * Ron Greego Raju
 
-Lecturer: <<>>
+Lecturer: Paul Greaney
 
   
 ### Project Deadline
@@ -55,9 +60,9 @@ Refer to Blackboard for the most up to date information on deadlines.
 
 ## Useful Links
 
-    DC Slack: <<add link to the slack channel here>>
-    Jira: 
-    GitHub: 
+    DC Slack: https://app.slack.com/client/T84LE6L6R/C02PPKA8728
+    Jira: https://addams-family.atlassian.net/jira/software/projects/AF/boards/1
+    GitHub: https://github.com/devopslecturer/afmsc2022
     Project close out presentation: 
 
 ### More Information
