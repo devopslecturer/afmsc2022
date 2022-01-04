@@ -20,7 +20,7 @@ db = SQLAlchemy()
 
 
 def index():
-    return render_template('users/index.html')
+    return render_template('signup/index.html')
 
 
 def create():
