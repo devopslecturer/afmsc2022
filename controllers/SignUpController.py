@@ -25,15 +25,3 @@ def index():
 
 def create():
     pass
-
-
-def show(user_id):
-    pass
-
-
-def update(user_id):
-    pass
-
-
-def destroy(user_id):
-    pass
