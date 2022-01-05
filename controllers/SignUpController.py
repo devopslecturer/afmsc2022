@@ -11,11 +11,11 @@
 """
 
 import sys
-from flask import render_template, redirect, url_for, request, abort
-
-from models.User import User
-
+from flask import Flask, json, render_template
 from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+
 db = SQLAlchemy()
 
 
@@ -23,5 +23,6 @@ def index():
     return render_template('signup/index.html')
 
 
+@app.route("/add")
 def create():
     pass
