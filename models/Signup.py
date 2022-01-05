@@ -16,7 +16,7 @@ db = SQLAlchemy()
 
 
 class User(db.Model):
-    __tablename__ = 'users'
+    __tablename__ = 'user_credentials'
 
     id = db.Column(db.Integer, primary_key=True)
     firstName = db.Column(db.String(120))
