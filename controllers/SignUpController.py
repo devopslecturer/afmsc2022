@@ -14,9 +14,8 @@ import sys
 from flask import Flask, render_template, request, flash, redirect
 from sqlalchemy.dialects import mysql
 
-from models.Signup import Signup
 from flask_sqlalchemy import SQLAlchemy
-from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.security import generate_password_hash
 
 app = Flask(__name__)
 
