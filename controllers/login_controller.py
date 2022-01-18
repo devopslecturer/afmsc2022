@@ -15,4 +15,13 @@ def index():
 
 
 def login():
-    pass
+    _username = request.form['email']
+    _password = request.form['pwd']
+    user = None
+    if user:
+        pass
+    else:
+        pass
+        # return jsonify({"status": 401,
+        #                 "reason": "Username or Password Error"})
+
