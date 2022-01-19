@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename= 'css/login.css') }}">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="img">
+			<img src="{{ url_for('static', filename= 'images/favicon.ico') }}">
+		</div>
+		<div class="login-content">
+			<form action="">
+				<h1 class="appname">Addams Family</h1>
+				<img src="{{ url_for('static', filename= 'images/avatar.svg') }}">
+				<h2 class="title">Login</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<p class="fas fa-user"></p>
+           		   </div>
+           		   <div class="div">
+           		   		<input type="email" class="input" placeholder="Email">
+           		   </div>
+				   </div>
+
+           		<div class="input-div pass">
+           		   <div class="i">
+           		    	<p class="fas fa-lock"></p>
+           		   </div>
+           		   <div class="div">
+           		    	<input type="password" class="input" placeholder= "Password">
+            	   </div>
+            	</div>
+            	<a class= "fp one" href="#">Forgot Password?</a>
+				<input type="submit" class="btn" value="Login">
+				<a class= "fp two" href=" ">Don't have an Account? Register</a>
+            </form>
+        </div>
+	</div>
+</body>
+</html>
