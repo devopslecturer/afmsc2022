@@ -10,12 +10,11 @@
 #
 """
 
-import sys
-from flask import Flask, render_template, request, flash, redirect
-from sqlalchemy.dialects import mysql
+from flask import Flask, render_template, request, flash
 
 from flask_sqlalchemy import SQLAlchemy
-from werkzeug.security import generate_password_hash
+
+from models.Signup import Signup
 
 app = Flask(__name__)
 
@@ -27,33 +26,20 @@ def index():
 
 
 def register_user():
-    conn = None
-    cursor = None
-
-    try:
-        _fname = request.form['firstName']
-        _lname = request.form['lastName']
-        _email = request.form['email']
-        _password = request.form['password']
-        _confirmPassword = request.form['confirmPassword']
-
-        if _fname and _lname and _email and _password and _password == _confirmPassword and request.method == 'POST':
-            _hashedPassword = generate_password_hash(_password)
-            sql = "INSERT INTO user_credentials(firstName, lastName, email, password) VALUES (%s, %s, %s, %s)"
-            data = (_fname, _lname, _email, _hashedPassword)
-            conn = mysql.connect()
-            cursor = conn.cursor()
-            cursor.execute(sql, data)
-            conn.commit
-            flash('Registered successfully!')
-            return redirect('/')
+    if request.method == 'POST':
+        if not request.form['firstName'] \
+                or not request.form['lastName'] \
+                or not request.form['email'] \
+                or not request.form['password'] \
+                or not request.form['confirmPassword']:
+            flash('Please enter all the fields', 'error')
         else:
-            return 'Error while adding user'
-    except Exception as e:
-        print(e)
-    finally:
-        cursor.close()
-        conn.close()
-
-
-
+            if request.form['password'] == request.form['confirmPassword']:
+                user = Signup(request.form['firstName'], request.form['lastName'], request.form['email'],
+                              request.form['password'])
+                db.session.add(user)
+                db.session.commit()
+                flash('Record was successfully added')
+            else:
+                flash('Passwords does not match', 'error')
+    return render_template('signup/index.html')
