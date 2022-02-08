@@ -14,7 +14,7 @@ from flask import Flask, render_template, request, flash
 
 from flask_sqlalchemy import SQLAlchemy
 
-from models.Signup import Signup
+from models.DBModels import Signup
 
 app = Flask(__name__)
 
