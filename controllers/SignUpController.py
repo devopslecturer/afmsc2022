@@ -37,6 +37,7 @@ def register_user():
             if request.form['password'] == request.form['confirmPassword']:
                 user = Signup(request.form['firstName'], request.form['lastName'], request.form['email'],
                               request.form['password'])
+                print(user)
                 db.session.add(user)
                 db.session.commit()
                 flash('Record was successfully added')
