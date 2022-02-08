@@ -12,21 +12,24 @@
 
 from flask_sqlalchemy import SQLAlchemy
 
-db = SQLAlchemy()
+signup = SQLAlchemy()
 
 
-class Signup(db.Model):
-    __tablename__ = 'user_credentials'
+class Signup(signup.Model):
+    __tablename__ = 'userCred'
 
-    id = db.Column('user_id', db.Integer, primary_key=True)
-    firstName = db.Column(db.String(120))
-    lastName = db.Column(db.String(120))
-    email = db.Column(db.String(120))
-    password = db.Column(db.String(120))
+    id = signup.Column(signup.Integer, primary_key=True)
+    firstName = signup.Column(signup.String(120))
+    lastName = signup.Column(signup.String(120))
+    email = signup.Column(signup.String(120))
+    password = signup.Column(signup.String(120))
 
     @property
-    def __init__(self, firstname, lastname, email, password):
-        self.firstName = firstname
-        self.lastName = lastname
-        self.email = email
-        self.password = password
+    def serialize(self):
+        return {
+            'id': self.id,
+            'firstName': self.firstName,
+            'lastName': self.lastName,
+            'email': self.email,
+            'password': self.password
+        }
