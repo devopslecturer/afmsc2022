@@ -14,3 +14,5 @@ from controllers.login_controller import login, index
 login_bp = Blueprint('login_bp', __name__)
 
 login_bp.route('/', methods=['GET'])(index)
+
+login_bp.route('/validate', methods=['POST'])(login)

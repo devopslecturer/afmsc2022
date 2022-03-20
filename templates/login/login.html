@@ -10,8 +10,9 @@
 		<div class="img">
 			<img src="{{ url_for('static', filename= 'images/favicon.ico') }}">
 		</div>
-		<div class="login-content">
-			<form action="">
+		<form method="POST" action="/login/validate">
+			<div class="login-content">
+
 				<h1 class="appname">Addams Family</h1>
 				<img src="{{ url_for('static', filename= 'images/avatar.svg') }}">
 				<h2 class="title">Login</h2>
@@ -20,7 +21,7 @@
            		   		<p class="fas fa-user"></p>
            		   </div>
            		   <div class="div">
-           		   		<input type="email" class="input" placeholder="Email">
+           		   		<input type="email" name="email" class="input" placeholder="Email">
            		   </div>
 				   </div>
 
@@ -29,14 +30,14 @@
            		    	<p class="fas fa-lock"></p>
            		   </div>
            		   <div class="div">
-           		    	<input type="password" class="input" placeholder= "Password">
+           		    	<input type="password" name="pwd" class="input" placeholder= "Password">
             	   </div>
             	</div>
             	<a class= "fp one" href="#">Forgot Password?</a>
 				<input type="submit" class="btn" value="Login">
 				<a class= "fp two" href=" ">Don't have an Account? Register</a>
-            </form>
         </div>
+		</form>
 	</div>
 </body>
 </html>
