@@ -8,7 +8,7 @@
 #
 """
 from flask import render_template, request, jsonify
-from models.Signup import Signup
+from models.DBModels import Signup
 
 
 def index():
