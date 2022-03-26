@@ -9,9 +9,12 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 DEBUG = True
 
 # Connect to the database
-PWD = '1234'
-USR = 'root'
-SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://{}:{}@127.0.0.1:3306/testDB'.format(USR, PWD)
+# Later update below to ENV variable
+USR = 'Addams_user'
+PWD = '2DPYkyqnD0yZZEMLPYPo'
+URL = 'addamsfamily.cbvz0bsw5sus.eu-west-1.rds.amazonaws.com'
+DATABASE = 'addamsfamily'
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://{}:{}@{}:3306/{}'.format(USR, PWD, URL, DATABASE)
 
 # Turn off the Flask-SQLAlchemy event system and warning
 SQLALCHEMY_TRACK_MODIFICATIONS = False
