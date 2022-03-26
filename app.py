@@ -2,7 +2,7 @@ from flask import Flask, render_template
 
 from flask_migrate import Migrate
 
-from models.DBModels import db
+from models.UserModels import db
 from routes.user_bp import user_bp
 from routes.signup_bp import signup_bp
 from routes.login_bp import *
