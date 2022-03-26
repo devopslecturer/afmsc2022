@@ -8,7 +8,7 @@
 #
 """
 from flask import render_template, request, jsonify
-from models.DBModels import Signup
+from models.UserModels import User
 
 
 def index():
@@ -18,13 +18,12 @@ def index():
 def login():
     if request.method == 'POST':
         _username = request.form['email']
-        _password = request.form['pwd']
+        _password = request.form['password']
         if _username and _password is not None:
-            user = Signup.query.filter_by(email=_username, password=_password).first()
-            print(user)
+            user = User.query.filter_by(email=_username, password=_password).first()
+            print(user.firstName)
             if user:
                 return render_template('users/index.html')
-                # need rework after home page is created
             else:
                 return jsonify({"reason": "User not found", "status": "404"})
         else:

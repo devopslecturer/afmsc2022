@@ -11,12 +11,10 @@
 """
 
 from flask import Flask, render_template, request, flash
-
 from flask_sqlalchemy import SQLAlchemy
+from models.UserModels import User
 
-from models.DBModels import Signup
-
-app = Flask(__name__)
+# app = Flask(__name__)
 
 db = SQLAlchemy()
 
@@ -31,12 +29,14 @@ def register_user():
                 or not request.form['lastName'] \
                 or not request.form['email'] \
                 or not request.form['password'] \
-                or not request.form['confirmPassword']:
+                or not request.form['confirmPassword'] \
+                or not request.form['address']:
             flash('Please enter all the fields', 'error')
         else:
             if request.form['password'] == request.form['confirmPassword']:
-                user = Signup(firstName=request.form['firstName'], lastName=request.form['lastName'],
-                              email=request.form['email'], password=request.form['password'])
+                user = User(firstName=request.form['firstName'], lastName=request.form['lastName'],
+                            email=request.form['email'], password=request.form['password'],
+                            address=request.form['address'])
                 db.session.add(user)
                 db.session.commit()
                 flash('Record was successfully added')
