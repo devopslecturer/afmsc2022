@@ -23,7 +23,7 @@ def login():
             user = Signup.query.filter_by(email=_username, password=_password).first()
             print(user)
             if user:
-                return jsonify({"message": "Login Successful", "status": "200"})
+                return render_template('users/index.html')
                 # need rework after home page is created
             else:
                 return jsonify({"reason": "User not found", "status": "404"})

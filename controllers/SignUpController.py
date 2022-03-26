@@ -42,4 +42,4 @@ def register_user():
                 flash('Record was successfully added')
             else:
                 flash('Passwords does not match', 'error')
-    return render_template('signup/index.html')
+    return render_template('login/login.html')
