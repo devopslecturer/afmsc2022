@@ -9,8 +9,9 @@
 """
 from flask import Blueprint
 
-from controllers.reset_password_controller import index
+from controllers.reset_password_controller import index,reset
 
 reset_password_bp = Blueprint('resetpassword_bp', __name__)
 
 reset_password_bp.route('/', methods=['GET'])(index)
+reset_password_bp.route('/reset', methods=['POST'])(reset)
