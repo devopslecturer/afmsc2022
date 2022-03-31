@@ -24,6 +24,43 @@ def index():
 
 
 def register_user():
+    """
+        API to register User
+        ---
+        tags:
+            - Register user
+        parameters:
+            - name: firstName
+              type: String
+              required: true
+              description: First Name
+            - name: lastName
+              type: String
+              required: true
+              description: Last Name
+            - name: email
+              type: String
+              required: true
+              description: Email
+            - name: password
+              type: String
+              required: true
+              description: Password
+            - name: confirmPassword
+              type: String
+              required: true
+              description: Confirm password
+            - name: address
+              type: String
+              required: true
+              description: Address
+        responses:
+            200:
+                description: Record was successfully added
+            500:
+                description: Error while adding record
+    """
+
     if request.method == 'POST':
         if not request.form['firstName'] \
                 or not request.form['lastName'] \

@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 
 from flask_migrate import Migrate
+from flasgger import Swagger
 
 from models.UserModels import db
 from routes.user_bp import user_bp
@@ -10,6 +11,8 @@ from routes.reset_password_bp import reset_password_bp
 
 app = Flask(__name__)
 app.config.from_object('config')
+
+Swagger(app)
 
 db.init_app(app)
 migrate = Migrate(app, db)
