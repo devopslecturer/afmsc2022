@@ -1,20 +1,7 @@
-"""
-#
-# @File         : SignUpController.py.py
-# @Created      : 2022-01-04 21:53
-# @Author       : Bubashankushan B
-# @Version      : v1.0.0
-# @Licensing    : 
-#
-# @Description  :
-#
-"""
-
-from flask import Flask, render_template, request, flash
+from flask import render_template, request, flash
 from flask_sqlalchemy import SQLAlchemy
-from models.UserModels import User
 
-# app = Flask(__name__)
+from models import User
 
 db = SQLAlchemy()
 
@@ -24,6 +11,43 @@ def index():
 
 
 def register_user():
+    """
+        API to register User
+        ---
+        tags:
+            - Register user
+        parameters:
+            - name: firstName
+              type: String
+              required: true
+              description: First Name
+            - name: lastName
+              type: String
+              required: true
+              description: Last Name
+            - name: email
+              type: String
+              required: true
+              description: Email
+            - name: password
+              type: String
+              required: true
+              description: Password
+            - name: confirmPassword
+              type: String
+              required: true
+              description: Confirm password
+            - name: address
+              type: String
+              required: true
+              description: Address
+        responses:
+            200:
+                description: Record was successfully added
+            500:
+                description: Error while adding record
+    """
+
     if request.method == 'POST':
         if not request.form['firstName'] \
                 or not request.form['lastName'] \

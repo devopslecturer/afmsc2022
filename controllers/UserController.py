@@ -1,7 +1,4 @@
-import sys
-from flask import render_template, redirect, url_for, request, abort
-
-from models.UserModels import User
+from flask import render_template
 
 from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()

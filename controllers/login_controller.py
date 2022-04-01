@@ -8,7 +8,7 @@
 #
 """
 from flask import render_template, request, jsonify
-from models.UserModels import User
+from models import User
 
 
 def index():
