@@ -1,17 +1,4 @@
-"""
-#
-# @File         : signup_bp.py
-# @Created      : 2022-01-05 11:48
-# @Author       : Bubashankushan B
-# @Version      : v1.0.0
-# @Licensing    : 
-#
-# @Description  :
-#
-"""
-
 from flask import Blueprint
-
 from controllers.SignUpController import index, register_user
 
 signup_bp = Blueprint('signup_bp', __name__)

@@ -1,20 +1,7 @@
-"""
-#
-# @File         : SignUpController.py.py
-# @Created      : 2022-01-04 21:53
-# @Author       : Bubashankushan B
-# @Version      : v1.0.0
-# @Licensing    : 
-#
-# @Description  :
-#
-"""
-
-from flask import Flask, render_template, request, flash
+from flask import render_template, request, flash
 from flask_sqlalchemy import SQLAlchemy
-from models.UserModels import User
 
-# app = Flask(__name__)
+from models import User
 
 db = SQLAlchemy()
 
