@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>All active Booking</h3>
+<table aria-describedby="bookings">
+    <thead>
+    <tr>
+        <th>Customer Name</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Phone Number</th>
+        <th>Room Type</th>
+        <th>Requests</th>
+        <th>Edit bookings</th>
+        <th>Delete Bookings</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for booking in bookings %}
+        <tr>
+            <td>{{ booking.customerName }}</td>
+            <td>{{ booking.startDate }}</td>
+            <td>{{ booking.endDate }}</td>
+            <td>{{ booking.phoneNumber }}</td>
+            <td>{{ booking.roomType }}</td>
+            <td>{{ booking.requests }}</td>
+            <td>Edit</td>
+            <td>Delete</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -3,7 +3,8 @@ from flask import Flask, render_template
 from flask_migrate import Migrate
 from flasgger import Swagger
 
-from models.UserModels import db
+from models import db
+from routes.booking_bp import booking_bp
 from routes.user_bp import user_bp
 from routes.signup_bp import signup_bp
 from routes.login_bp import *
@@ -19,6 +20,7 @@ migrate = Migrate(app, db)
 
 app.register_blueprint(user_bp, url_prefix='/users')
 app.register_blueprint(signup_bp, url_prefix='/signup')
+app.register_blueprint(booking_bp, url_prefix='/booking')
 app.register_blueprint(login_bp, url_prefix='/login')
 app.register_blueprint(reset_password_bp, url_prefix='/reset-password')
 
