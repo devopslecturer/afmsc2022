@@ -36,7 +36,18 @@ jobs:
         ECR_REPOSITORY: addams_family
         IMAGE_TAG: addams_family_image
       run: |
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        export DB_USR=${{ secrets.DB_USR }}
+        export DB_PWD=${{ secrets.DB_PWD }}
+        export DB_URL=${{ secrets.DB_URL }}
+        export DB_PORT=${{ secrets.DB_PORT }}
+        export DB_NAME=${{ secrets.DB_NAME }}
+        docker build \
+          --build-arg DB_USR \
+          --build-arg DB_PWD \
+          --build-arg DB_URL \
+          --build-arg DB_PORT \
+          --build-arg DB_NAME \
+          -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
         
