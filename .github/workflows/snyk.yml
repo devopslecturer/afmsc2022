@@ -11,7 +11,7 @@
 # issues, monitor images for newly disclosed vulnerabilities in Snyk and
 # fail PR checks for new vulnerabilities, see https://github.com/snyk/actions/
 
-name: Snyk Container
+name: Snyk Container and Code Scanning
 
 on:
   push:
@@ -27,6 +27,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - uses: snyk/actions/setup@master
+    - name: Snyk Test
+      run: snyk test --sarif-file-output=snyk-sarif.json
+      continue-on-error: true
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
     - name: Build a Docker image
       run: docker build -t your/image-to-test .
     - name: Run Snyk to check Docker image for vulnerabilities
@@ -45,4 +51,4 @@ jobs:
     - name: Upload result to GitHub Code Scanning
       uses: github/codeql-action/upload-sarif@v2
       with:
-        sarif_file: snyk.sarif
+        sarif_file: snyk-sarif.json
