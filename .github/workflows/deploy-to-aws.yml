@@ -36,11 +36,16 @@ jobs:
         ECR_REPOSITORY: addams_family
         IMAGE_TAG: addams_family_image
       run: |
-        export DB_USR=${{ secrets.DB_USR }}
-        export DB_PWD=${{ secrets.DB_PWD }}
-        export DB_URL=${{ secrets.DB_URL }}
-        export DB_PORT=${{ secrets.DB_PORT }}
-        export DB_NAME=${{ secrets.DB_NAME }}
+#        export DB_USR=${{ secrets.DB_USR }}
+#        export DB_PWD=${{ secrets.DB_PWD }}
+#        export DB_URL=${{ secrets.DB_URL }}
+#        export DB_PORT=${{ secrets.DB_PORT }}
+#        export DB_NAME=${{ secrets.DB_NAME }}
+        export DB_USR=Addams_user
+        export DB_PWD=My$qlPa$sw0rd
+        export DB_URL=addamsfamily.cbvz0bsw5sus.eu-west-1.rds.amazonaws.com/
+        export DB_PORT=3306
+        export DB_NAME=addamsfamily
         docker build \
           --build-arg DB_USR \
           --build-arg DB_PWD \
