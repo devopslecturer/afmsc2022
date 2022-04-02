@@ -1,0 +1,99 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Create a DB subnet group and MYSQL Database"
+
+Parameters:
+  VPC:
+    Type: String
+    Description: The VPC to create the cluster
+    Default: vpc-06aadf98507eb43e9
+
+  PrivateSubnet01:
+    Type: String
+    Description: The subnet for the DB cluster
+    Default: subnet-053117e68f7b2e104
+
+  PrivateSubnet02:
+    Type: String
+    Description: The subnet for the DB cluster
+    Default: subnet-0868e832925c3a8d8
+    
+  MasterUsername:
+    Type: String
+    Description: The username for our database.
+  
+  MasterUserPassword:
+    Type: String
+    Description: The password for the database.
+    "NoEcho": true
+
+  ParameterGroup:
+    Type: String
+    Description: The name of the database parameter group created.
+    Default: addams
+
+Resources:
+    EC2SecurityGroup:
+        Type: "AWS::EC2::SecurityGroup"
+        Properties:
+            GroupDescription: "Database instances security group"
+            VpcId: !Ref VPC
+            SecurityGroupIngress: 
+              - 
+                CidrIp: 10.0.0.0/16
+                FromPort: 3306
+                IpProtocol: "tcp"
+                ToPort: 3306
+            SecurityGroupEgress: 
+              - 
+                CidrIp: "0.0.0.0/0"
+                IpProtocol: "-1"
+
+    RDSDBSubnetGroup:
+        Type: "AWS::RDS::DBSubnetGroup"
+        Properties:
+            DBSubnetGroupDescription: "Subnet Group for mySQL database"
+            DBSubnetGroupName: !Sub "${AWS::Region}-aws-dxl-database-subnet-group"
+            SubnetIds: 
+              - !Ref PrivateSubnet01
+              - !Ref PrivateSubnet02
+            Tags: 
+              - Key: Name
+                Value: eu-central-1-test-db-cluster
+              - Key: Project
+                Value: Addams
+              - Key: Environment
+                Value: test
+
+    RDSDBInstance:
+        Type: AWS::RDS::DBInstance
+        Properties:
+            DBInstanceIdentifier: database-1
+            AllocatedStorage: 20
+            DBInstanceClass: db.m5.large
+            Engine: "MYSQL"
+            MasterUsername: !Ref MasterUsername
+            MasterUserPassword: !Ref MasterUserPassword
+            BackupRetentionPeriod: 7
+            MultiAZ: true
+            EngineVersion: 8.0.20
+            AutoMinorVersionUpgrade: true
+            Iops: 1000
+            PubliclyAccessible: false
+            StorageType: gp2
+            Port: 3306
+            StorageEncrypted: true
+            EnableIAMDatabaseAuthentication: false
+            EnablePerformanceInsights: true
+            PerformanceInsightsRetentionPeriod: 7
+            DBSubnetGroupName: !Ref RDSDBSubnetGroup
+            VPCSecurityGroups: 
+              - !Ref EC2SecurityGroup
+            MaxAllocatedStorage: 50
+            DBParameterGroupName: !Ref ParameterGroup
+            Tags: 
+              - Key: Name
+                Value: database-1
+              - Key: Project
+                Value: Addams
+              - Key: Environment
+                Value: test
