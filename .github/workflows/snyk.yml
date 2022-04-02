@@ -42,7 +42,13 @@ jobs:
       with:
         image: snyk-to-sarif
         args: --file=Dockerfile
-    - name: Upload result to GitHub Code Scanning
-      uses: github/codeql-action/upload-sarif@v2
+        json: true
+    - uses: garethr/snyk-to-sarif@master
+    - uses: actions/upload-artifact@v2
+      with:
+        name: SARIF
+        path: snyk.sarif
+    - name: Upload the SARIF file
+      uses: github/codeql-action/upload-sarif@v1
       with:
         sarif_file: snyk.sarif
