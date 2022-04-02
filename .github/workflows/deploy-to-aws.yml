@@ -25,12 +25,6 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: eu-west-1
 
-    - run: |
-        echo '[default]' >> ~/.aws/credentials
-        echo 'aws_access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}' >> ~/.aws/credentials
-        echo 'aws_secret_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}' >> ~/.aws/credentials
-        echo 'region=${{ secrets. AWS_REGION }}' >> ~/.aws/credentials
-
     - name: Login to Amazon ECR
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
@@ -47,14 +41,13 @@ jobs:
         export DB_URL=${{ secrets.DB_URL }}
         export DB_PORT=${{ secrets.DB_PORT }}
         export DB_NAME=${{ secrets.DB_NAME }}
-        export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain addams-family --domain-owner 942717128015 --query authorizationToken --output text`
+        aws codeartifact login --tool pip --repository addams_family --domain addams-family --domain-owner 942717128015
         docker build \
           --build-arg DB_USR \
           --build-arg DB_PWD \
           --build-arg DB_URL \
           --build-arg DB_PORT \
           --build-arg DB_NAME \
-          --build-arg CODEARTIFACT_AUTH_TOKEN \
           -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
