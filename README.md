@@ -23,11 +23,29 @@ This is the online repository for the <<Team Name>>. Summary of project requirem
 
 Our product will be delivered using an Agile methodology that embraces the DevOps culture. Please note that our culture embraces change and these documents are treated as living, breathing artefacts that will be continuously updated.
 
-### Scrum Master
-Dalimol Abraham
-
+### Scrum Masters
+ * Aishwaryalakshmi Arumugam, 13 Dec 2021 - 26 Dec 2021
+ * Aravind Rajesh Kanna, 27 Dec 2021 - 9 Jan 2022
+ * Bubashankushan, 10 Jan 2022 - 23 Jan 2022
+ * Dalimol Abraham, 24 Jan 2022 - 6 Feb 2022
+ * Rohit Mishra, 7 Feb 2022 - 20 Feb 2022
+ * Ron Greego Raju, 21 Feb 2022 - 6 Mar 2022
+ * Aishwaryalakshmi Arumugam, 7 Mar 2022 - 13 Mar 2022
+ * Aravind Rajesh Kanna, 14 Mar 2022 - 20 Mar 2022
+ * Bubashankushan, 21 Mar 2022 - 27 Mar 2022
+ * Dalimol Abraham, 28 Mar 2022 - 3 Apr 2022
+ 
 ### Product Owner
-Bubashankushan
+ * Ron Greego Raju, 13 Dec 2021 - 26 Dec 2021
+ * Rohit Mishra, 27 Dec 2021 - 9 Jan 2022
+ * Dalimol Abraham, 10 Jan 2022 - 23 Jan 2022
+ * Bubashankushan, 24 Jan 2022 - 6 Feb 2022
+ * Aravind Rajesh Kanna, 7 Feb 2022 - 20 Feb 2022
+ * Aishwaryalakshmi Arumugam, 21 Feb 2022 - 6 Mar 2022
+ * Ron Greego Raju, 7 Mar 2022 - 13 Mar 2022
+ * Rohit Mishra, 14 Mar 2022 - 20 Mar 2022
+ * Dalimol Abraham, 21 Mar 2022 - 27 Mar 2022
+ * Bubashankushan, 28 Mar 2022 - 3 Apr 2022
 
 ### Team Members
  * Aishwaryalakshmi Arumugam

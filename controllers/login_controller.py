@@ -7,7 +7,8 @@
 # Description   :
 #
 """
-from flask import Flask, render_template, request, flash, redirect
+from flask import render_template, request, jsonify
+from models import User
 
 
 def index():
@@ -15,13 +16,16 @@ def index():
 
 
 def login():
-    _username = request.form['email']
-    _password = request.form['pwd']
-    user = None
-    if user:
-        pass
-    else:
-        pass
-        # return jsonify({"status": 401,
-        #                 "reason": "Username or Password Error"})
+    if request.method == 'POST':
+        _username = request.form['email']
+        _password = request.form['password']
+        if _username and _password is not None:
+            user = User.query.filter_by(email=_username, password=_password).first()
+            print(user.firstName)
+            if user:
+                return render_template('users/index.html')
+            else:
+                return jsonify({"reason": "User not found", "status": "404"})
+        else:
+            return jsonify({"status": "400", "reason": "Bas Request"})
 
