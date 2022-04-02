@@ -9,11 +9,11 @@ app:
 
 
 # -- Customized Configuration for GraphQL/SOAP/OpenAPI, add here --
-  openApiConf:
-    path: /apidocs # OR...
+#  openApiConf:
+#    path: /apidocs # OR...
 #     filePath: openApi.json
-  autoPolicy: true
-  autoInputVectors: true
+#  autoPolicy: true
+#  autoInputVectors: true
   # Configuration Docs: https://docs.stackhawk.com/hawkscan/configuration/
 
 # -- If Authenticated Scanning is needed, add here --
