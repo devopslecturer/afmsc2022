@@ -18,7 +18,7 @@ ENV DB_NAME=$DB_NAME
 WORKDIR /app
 
 COPY requirements.txt requirements.txt
-RUN pip config set global.index-url https://aws:$CODEARTIFACT_AUTH_TOKEN@addams-family-942717128015.d.codeartifact.region.amazonaws.com/pypi/addams_family/simple/
+RUN pip config set global.index-url https://aws:$CODEARTIFACT_AUTH_TOKEN@addams-family-942717128015.d.codeartifact.region.amazonaws.com/addams_family/
 RUN pip install -r requirements.txt
 
 COPY . .
