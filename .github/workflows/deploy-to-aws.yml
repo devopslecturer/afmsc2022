@@ -41,12 +41,14 @@ jobs:
         export DB_URL=${{ secrets.DB_URL }}
         export DB_PORT=${{ secrets.DB_PORT }}
         export DB_NAME=${{ secrets.DB_NAME }}
+        export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain addams-family --domain-owner 942717128015 --query authorizationToken --output text`
         docker build \
           --build-arg DB_USR \
           --build-arg DB_PWD \
           --build-arg DB_URL \
           --build-arg DB_PORT \
           --build-arg DB_NAME \
+          --build-arg CODEARTIFACT_AUTH_TOKEN \
           -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
