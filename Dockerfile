@@ -24,4 +24,4 @@ COPY . .
 CMD [ "flask", "db" , "init"]
 CMD [ "flask", "db" , "migrate"]
 CMD [ "flask", "db" , "upgrade"]
-CMD [ "waitress-serve", "--port=8080" , "--call", "app:create_app"]
+CMD [ "NEW_RELIC_CONFIG_FILE=newrelic.ini", "newrelic-admin", "run-program", "waitress-serve", "--port=8080" , "--call", "app:create_app"]

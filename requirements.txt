@@ -22,6 +22,7 @@ jsonschema==4.4.0
 Mako==1.1.6
 MarkupSafe==2.0.1
 mistune==2.0.2
+newrelic==7.8.0.174
 output==1.0.1
 packaging==21.3
 paramiko==2.8.1
