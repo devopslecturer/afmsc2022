@@ -9,16 +9,11 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 # DEBUG = True
 
 # Connect to the database
-# USR = os.environ.get("DB_USR")
-USR = "root"
-# PWD = os.environ.get("DB_PWD")
-PWD = "1234"
-# URL = os.environ.get("DB_URL")
-URL = "127.0.0.1"
-# PORT = os.environ.get("DB_PORT")
-PORT = "3306"
-# NAME = os.environ.get("DB_NAME")
-NAME = "testDB"
+USR = os.environ.get("DB_USR")
+PWD = os.environ.get("DB_PWD")
+URL = os.environ.get("DB_URL")
+PORT = os.environ.get("DB_PORT")
+NAME = os.environ.get("DB_NAME")
 SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://{}:{}@{}:{}/{}'.format(USR, PWD, URL, PORT, NAME)
 
 # Turn off the Flask-SQLAlchemy event system and warning
