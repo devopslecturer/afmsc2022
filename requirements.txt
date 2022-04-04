@@ -46,3 +46,4 @@ urllib3==1.26.9
 waitress==2.1.1
 Werkzeug==2.0.2
 wrapt==1.14.0
+Boto3==1.21.29
