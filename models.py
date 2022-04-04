@@ -12,6 +12,7 @@ class User(db.Model):
     email = db.Column(db.String(120))
     password = db.Column(db.String(120))
     address = db.Column(db.String(120))
+    usertype = db.Column(db.String(120))
 
     @property
     def serialize(self):
@@ -21,7 +22,8 @@ class User(db.Model):
             'lastName': self.lastName,
             'email': self.email,
             'password': self.password,
-            'address': self.address
+            'address': self.address,
+            'usertype': self.usertype
         }
 
 

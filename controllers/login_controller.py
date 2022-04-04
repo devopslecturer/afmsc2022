@@ -1,13 +1,6 @@
-"""
-# 
-# File          : login_controller.py
-# Created       : 17/01/22 9:42 AM
-# Author        : Ron Greego
-# Version       : v1.0.0
-# Description   :
-#
-"""
-from flask import render_template, request, jsonify
+from flask import render_template, request, session
+
+from controllers.BookingController import getBooking
 from models import User
 
 
@@ -21,11 +14,13 @@ def login():
         _password = request.form['password']
         if _username and _password is not None:
             user = User.query.filter_by(email=_username, password=_password).first()
-            print(user.firstName)
             if user:
-                return render_template('users/index.html')
-            else:
-                return jsonify({"reason": "User not found", "status": "404"})
-        else:
-            return jsonify({"status": "400", "reason": "Bas Request"})
+                session['user'] = user.id
+                return getBooking()
+    return render_template('login/login.html')
+
+
+def logout():
+    session.clear()
+    return render_template('index.html')
 

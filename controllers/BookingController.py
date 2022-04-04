@@ -1,13 +1,9 @@
-from flask import render_template, request, flash, redirect, url_for
+from flask import render_template, request, flash, redirect, session
 from flask_sqlalchemy import SQLAlchemy
 
 from models import Bookings
 
 db = SQLAlchemy()
-
-
-def index():
-    return render_template('booking/booking.html')
 
 
 def getBooking():
@@ -22,11 +18,17 @@ def getBooking():
             500:
                 description: Internal server error
     """
-    return render_template('booking/booking.html', bookings=Bookings.query.all())
+    if session.get('user'):
+        return render_template('booking/booking.html', bookings=Bookings.query.all())
+    else:
+        return render_template('login/login.html')
 
 
 def createBooking():
-    return render_template('booking/createBooking.html')
+    if session.get('user'):
+        return render_template('booking/createBooking.html')
+    else:
+        return render_template('login/login.html')
 
 
 def add_booking():
@@ -66,19 +68,21 @@ def add_booking():
             500:
                 description: Error while adding record
     """
-
-    if request.method == 'POST':
-        if not request.form['customerName'] \
-                or not request.form['startDate'] \
-                or not request.form['endDate'] \
-                or not request.form['phoneNumber'] \
-                or not request.form['roomType']:
-            flash('Please enter all required fields', 'error')
-        else:
-            booking = Bookings(customerName=request.form['customerName'], startDate=request.form['startDate'],
-                               endDate=request.form['endDate'], phoneNumber=request.form['phoneNumber'],
-                               roomType=request.form['roomType'], requests=request.form['requests'])
-            db.session.add(booking)
-            db.session.commit()
-            flash('Booking added successfully')
-    return redirect("/booking/")
+    if session.get('user'):
+        if request.method == 'POST':
+            if not request.form['customerName'] \
+                    or not request.form['startDate'] \
+                    or not request.form['endDate'] \
+                    or not request.form['phoneNumber'] \
+                    or not request.form['roomType']:
+                flash('Please enter all required fields', 'error')
+            else:
+                booking = Bookings(customerName=request.form['customerName'], startDate=request.form['startDate'],
+                                   endDate=request.form['endDate'], phoneNumber=request.form['phoneNumber'],
+                                   roomType=request.form['roomType'], requests=request.form['requests'])
+                db.session.add(booking)
+                db.session.commit()
+                flash('Booking added successfully')
+        return redirect("/booking/")
+    else:
+        return render_template('login/login.html')

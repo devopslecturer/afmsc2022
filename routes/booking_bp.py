@@ -1,9 +1,7 @@
 from flask import Blueprint
-from controllers.BookingController import index, add_booking, getBooking, createBooking
+from controllers.BookingController import add_booking, getBooking, createBooking
 
 booking_bp = Blueprint('booking_bp', __name__)
-
-# booking_bp.route('/', methods=['GET'])(index)
 
 booking_bp.route('/', methods=['GET'])(getBooking)
 
