@@ -18,11 +18,21 @@ WORKDIR /app
 
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
-RUN NEW_RELIC_CONFIG_FILE=newrelic.ini
+
+ENV NEW_RELIC_LOG=stdout \
+    NEW_RELIC_DISTRIBUTED_TRACING_ENABLED=true \
+    NEW_RELIC_LICENSE_KEY=eu01xx5d01e66ffd36e7108c58a240cbcb96NRAL \
+    NEW_RELIC_APP_NAME="afd"
+
+COPY newrelic.ini newrelic.ini
 
 COPY . .
 
 CMD [ "flask", "db" , "init"]
 CMD [ "flask", "db" , "migrate"]
 CMD [ "flask", "db" , "upgrade"]
-CMD [ "newrelic-admin", "run-program", "waitress-serve", "--port=8080" , "--call", "app:create_app"]
+
+EXPOSE 8080
+
+ENTRYPOINT ["newrelic-admin", "run-program"]
+CMD [ "waitress-serve", "--port=8080" , "--call", "app:create_app"]
