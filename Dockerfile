@@ -18,10 +18,11 @@ WORKDIR /app
 
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
+RUN NEW_RELIC_CONFIG_FILE=newrelic.ini
 
 COPY . .
 
 CMD [ "flask", "db" , "init"]
 CMD [ "flask", "db" , "migrate"]
 CMD [ "flask", "db" , "upgrade"]
-CMD [ "NEW_RELIC_CONFIG_FILE=newrelic.ini", "newrelic-admin", "run-program", "waitress-serve", "--port=8080" , "--call", "app:create_app"]
+CMD [ "newrelic-admin", "run-program", "waitress-serve", "--port=8080" , "--call", "app:create_app"]
