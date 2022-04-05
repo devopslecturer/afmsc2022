@@ -90,7 +90,7 @@ Friday, 8 April 2022 and 23:59
     DC Slack: https://app.slack.com/client/T84LE6L6R/C02PPKA8728
     Jira: https://addams-family.atlassian.net/jira/software/projects/AF/boards/1
     GitHub: https://github.com/devopslecturer/afmsc2022
-    Project close out presentation: 
+    Project close out presentation: https://studentlyit-my.sharepoint.com/:p:/g/personal/l00163287_student_lyit_ie/ERRUuHsuL2xEkmCUo0UD2yIBbz_u9QgGeu2XErFWNe_dKw?e=ptKTb7
 
 ### More Information
 For more information visit our other sections
