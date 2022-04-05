@@ -90,7 +90,9 @@ Friday, 8 April 2022 and 23:59
     DC Slack: https://app.slack.com/client/T84LE6L6R/C02PPKA8728
     Jira: https://addams-family.atlassian.net/jira/software/projects/AF/boards/1
     GitHub: https://github.com/devopslecturer/afmsc2022
-    Project close out presentation: 
+    Staging Site: http://ec2-34-242-215-39.eu-west-1.compute.amazonaws.com:8080/
+    Production Site: http://ec2-54-73-208-253.eu-west-1.compute.amazonaws.com:8080/
+    Project close out presentation: https://studentlyit-my.sharepoint.com/:p:/g/personal/l00163287_student_lyit_ie/ERRUuHsuL2xEkmCUo0UD2yIBbz_u9QgGeu2XErFWNe_dKw?e=ptKTb7
 
 ### More Information
 For more information visit our other sections
@@ -197,7 +199,7 @@ These are the current Risks on the project, re-aligned on a weekly basis
 
 ## Other
 
-    Sprints will start <<check with lecturer>>.
+    Sprints started on 13 Dec 2021.
     The Scrum Master role rotates each week, the schedule is available on the on the process section
     The Product Owner role rotates each week, the schedule is available on the on the process section
     Jira will be used for task management and planning.
