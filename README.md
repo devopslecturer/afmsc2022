@@ -199,7 +199,7 @@ These are the current Risks on the project, re-aligned on a weekly basis
 
 ## Other
 
-    Sprints will start <<check with lecturer>>.
+    Sprints started on 13 Dec 2021.
     The Scrum Master role rotates each week, the schedule is available on the on the process section
     The Product Owner role rotates each week, the schedule is available on the on the process section
     Jira will be used for task management and planning.
