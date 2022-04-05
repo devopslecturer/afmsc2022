@@ -1,10 +1,11 @@
 # afmsc2022
-Adams Family MSc Assignment 2022
+Addams Family MSc Assignment 2022
 
 ## Table of Contents
 
   * [Table of Contents](#table-of-contents)
   * [Preamble](#preamble)
+    + [Summary of project requirements](#summary-of-project-requirements)
     + [Scrum Master](#scrum-master)
     + [Product Owner](#product-owner)
   * [Project Deadline](#project-deadline)
@@ -18,16 +19,43 @@ Adams Family MSc Assignment 2022
 
 ## Preamble
 
-This is the online repository for the <<Team Name>>. Summary of project requirements should go here.
+This is the online repository for the Addams Family.
 
+### Summary of project requirements
+The end customer would like an online booking system for range of hotels and holiday homes. Their
+most popular product is Haunted Houses. The system must take details of customer map them to the
+room/suites/houses along with a single box for extra ‘nice to have’ requests. The system should be
+clean and simple. Your team has been tasked with creating the pipeline for the SDLC. You have also
+been asked to provide a simple prototype page(s) to test the pipeline. The system needs to take into
+account the usual security requirements. The administrator of the end system (Adams family member)
+should be able to access detailed information and edit as appropriate. Once the client enters details
+it should not be able to be changed by the holiday maker.
 
 Our product will be delivered using an Agile methodology that embraces the DevOps culture. Please note that our culture embraces change and these documents are treated as living, breathing artefacts that will be continuously updated.
 
-### Scrum Master
-Ron Greego Raju
-
+### Scrum Masters
+ * Aishwaryalakshmi Arumugam, 13 Dec 2021 - 26 Dec 2021
+ * Aravind Rajesh Kanna, 27 Dec 2021 - 9 Jan 2022
+ * Bubashankushan, 10 Jan 2022 - 23 Jan 2022
+ * Dalimol Abraham, 24 Jan 2022 - 6 Feb 2022
+ * Rohit Mishra, 7 Feb 2022 - 20 Feb 2022
+ * Ron Greego Raju, 21 Feb 2022 - 6 Mar 2022
+ * Aishwaryalakshmi Arumugam, 7 Mar 2022 - 13 Mar 2022
+ * Aravind Rajesh Kanna, 14 Mar 2022 - 20 Mar 2022
+ * Bubashankushan, 21 Mar 2022 - 27 Mar 2022
+ * Dalimol Abraham, 28 Mar 2022 - 3 Apr 2022
+ 
 ### Product Owner
-Rohit Mishra
+ * Ron Greego Raju, 13 Dec 2021 - 26 Dec 2021
+ * Rohit Mishra, 27 Dec 2021 - 9 Jan 2022
+ * Dalimol Abraham, 10 Jan 2022 - 23 Jan 2022
+ * Bubashankushan, 24 Jan 2022 - 6 Feb 2022
+ * Aravind Rajesh Kanna, 7 Feb 2022 - 20 Feb 2022
+ * Aishwaryalakshmi Arumugam, 21 Feb 2022 - 6 Mar 2022
+ * Ron Greego Raju, 7 Mar 2022 - 13 Mar 2022
+ * Rohit Mishra, 14 Mar 2022 - 20 Mar 2022
+ * Dalimol Abraham, 21 Mar 2022 - 27 Mar 2022
+ * Bubashankushan, 28 Mar 2022 - 3 Apr 2022
 
 ### Team Members
  * Aishwaryalakshmi Arumugam
@@ -173,7 +201,7 @@ These are the current Risks on the project, re-aligned on a weekly basis
     The Scrum Master role rotates each week, the schedule is available on the on the process section
     The Product Owner role rotates each week, the schedule is available on the on the process section
     Jira will be used for task management and planning.
-    Each member of the team will work <<? story points>> per week, unless they are on vacation.
+    Each member of the team will work 3 story points per week, unless they are on vacation.
 
 ### Branching Strategy
  * Main
@@ -182,6 +210,6 @@ These are the current Risks on the project, re-aligned on a weekly basis
 
 ### Estimating Story Points Within Jira
 
-The teams team's velocity is calculated by dividing the the number of points burned each sprint divided by no of sprints. The Velocity chart from Jira (below) is used for this calculation.
+The teams team's velocity is calculated by dividing the number of points burned each sprint divided by no of sprints. The Velocity chart from Jira (below) is used for this calculation.
 
-The teams current story point velocity is "<Choose the number!>".
+The teams current story point velocity is "4.3".
