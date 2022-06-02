@@ -43,7 +43,7 @@ six==1.16.0
 SQLAlchemy==1.4.29
 tomli==2.0.1
 urllib3==1.26.9
-waitress==2.1.1
+waitress==2.1.2
 Werkzeug==2.0.2
 wrapt==1.14.0
 Boto3==1.21.29
