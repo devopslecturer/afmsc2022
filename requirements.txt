@@ -36,7 +36,7 @@ pyrsistent==0.18.1
 pytest==7.1.1
 pytest-flask==1.2.0
 PyYAML==6.0
-redis==4.1.4
+redis==4.3.6
 requests==2.27.1
 resolvelib==0.5.4
 six==1.16.0
