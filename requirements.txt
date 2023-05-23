@@ -37,7 +37,7 @@ pytest==7.1.1
 pytest-flask==1.2.0
 PyYAML==6.0
 redis==4.1.4
-requests==2.27.1
+requests==2.31.0
 resolvelib==0.5.4
 six==1.16.0
 SQLAlchemy==1.4.29
